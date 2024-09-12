@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular média de 1 aluno!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <h1>Calcular média de 1 aluno!</h1>
+        <input type="number" id="nota_1" placeholder="Insira a nota 1">
+        <input type="number" max="100" id="nota_2" placeholder="Insira a nota 2">
+        <input type="number" max="100" id="nota_3" placeholder="Insira a nota 3">
+
+        <button id="calcular" onclick="calcular()">Calcular</button>
+
+        <p>A sua média é: <span id="media"></span></p> 
+        <p id="status"></p>
+        
+    </div>
+    
+    <script> 
+        function calcular(){
+            var n1, n2, n3, media;
+            
+            n1 = document.getElementById('nota_1').value; 
+            n2 = document.getElementById('nota_2').value;
+            n3 = document.getElementById('nota_3').value;
+
+            media = (parseFloat(n1) + parseFloat(n2) + parseFloat(n3)) / 3
+
+            document.getElementById('media').innerHTML = media
+            
+            if (media < 70){
+                document.getElementById('status').innerHTML = "Reprovado"
+            }else{
+                document.getElementById('status').innerHTML = "Aprovado"
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
